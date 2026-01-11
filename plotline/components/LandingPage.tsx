@@ -3,6 +3,7 @@ import Image from 'next/image'
 import Vector11 from '../images/Vector 11.svg'
 import Arrow from '../images/arrow.svg'
 import NoCreditCard from '../images/No Credit.svg'
+import Avater from './Avater'
 
 export const LandingPage = () => {
     return (
@@ -27,8 +28,13 @@ export const LandingPage = () => {
                     <Image src={Arrow} alt="" className='absolute bottom-[-18px] right-96' />
                     <Image src={NoCreditCard} alt="" className='absolute -bottom-15 right-80' />
                 </div>
-                <div>
-                    
+                <div className='flex flex-col items-center justify-center py-6'>
+                    <div className='flex items-center gap-2'>
+                        <Avater />
+                        <Avater />
+                        ⭐⭐⭐⭐ 
+                    </div>
+                    <p className='text-lg font-medium tracking-tight pt-2'>Used by 150+ Professional Users</p>
                 </div>
             </div>
 
