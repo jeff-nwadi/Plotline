@@ -9,7 +9,7 @@ export const LandingPage = () => {
     return (
         <div className='py-16 px-36'>
             <div className='text-center'>
-                <h3 className='text-2xl font-medium mb-6 tracking-tight'>Create Stunning Visuals and Professional Stories</h3>
+                <h3 className='text-4xl font-medium mb-6 tracking-tight'>Create Stunning Visuals and Professional Stories</h3>
                 <h1 className='text-7xl gap-2 mb-6 tracking-tight heading'>
                     <span>Without Ever </span>
                     <span className='text-black relative'>

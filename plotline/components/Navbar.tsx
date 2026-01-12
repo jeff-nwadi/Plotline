@@ -63,10 +63,14 @@ export const Navbar = () => {
                     <NavLink href="/faq" isActive={pathname === "/faq"}>FQAs</NavLink>
                 </ul>
                 <div className='flex gap-5'>
-                    <button className='bg-white text-black px-6 font-bold py-2 rounded-[15px] cursor-pointer flex items-center gap-2 border border-black border-b-[3px] active:border-b active:translate-y-[2px] transition-all duration-75'>
+                    <motion.button 
+                    whileTap={{ scale: 0.9 }}
+                    whileHover={{ y: -2 }}
+                    transition={{ duration: 0.2 }}
+                    className='bg-white text-black px-6 font-bold py-2 rounded-[15px] cursor-pointer flex items-center gap-2 border border-black border-b-[3px] hover:border-b-4'>
                         <CircleUserRound size={25} />
-                        Login/Sign Up
-                    </button>
+                        Login/Sign Up 
+                    </motion.button>
                 </div>
             </div>
         </div>
