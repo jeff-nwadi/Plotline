@@ -1,12 +1,19 @@
 import Image from 'next/image'
-import Storyboard from '../images/StoryTribe Demo - Jan 2024 0-22 screenshot 1.svg'
 import Logos from '../images/Frame 124.svg'
 
 export const ContentPage = () => {
   return (
-    <div className='py-16 px-36 -mt-96'>
-        <Image src={Storyboard} alt="" className='' />
+    <div className='py-16 px-1 md:px-36 md:-mt-96'>
+      <div className='hidden md:flex'>
+        <video src="/storytribe-demo.mp4" loop autoPlay muted className='w-full h-auto rounded-4xl' />
         <Image src={Logos} alt="" className='py-10' />
+      </div>
+     
+     {/* mobile screen */}
+     <div className='flex md:hidden -mt-20'>
+      
+        <video src="/storytribe-demo.mp4" loop autoPlay muted className='w-full h-auto rounded-4xl' />
+     </div>
     </div>
   )
 }

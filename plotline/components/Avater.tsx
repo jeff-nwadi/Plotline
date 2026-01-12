@@ -28,6 +28,13 @@ export default function Avater() {
         />
         <AvatarFallback>U3</AvatarFallback>
       </Avatar>
+      <Avatar className="ring-2 ring-background">
+        <AvatarImage
+          alt="U3"
+          src="https://images.unsplash.com/photo-1655874819398-c6dfbec68ac7?w=96&h=96&dpr=2&q=80"
+        />
+        <AvatarFallback>U3</AvatarFallback>
+      </Avatar>
     </div>
   );
 }

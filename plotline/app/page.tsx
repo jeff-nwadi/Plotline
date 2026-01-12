@@ -6,11 +6,16 @@ import { ContentPage } from "../components/ContentPage";
 export default function Home() {
   return (
     <div className="flex flex-col min-h-screen">
-      <div className="background h-[130vh]">
+      <div className="background h-[150vh] md:h-[130vh]">
         <Navbar />
         <LandingPage />
+        <div className="flex md:hidden">
+          <ContentPage />
+        </div>
       </div>
-      <ContentPage />
+      <div className="hidden md:flex">
+        <ContentPage />
+      </div>
     </div>
   );
 }

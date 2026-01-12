@@ -7,8 +7,8 @@ import Avater from './Avater'
 
 export const LandingPage = () => {
     return (
-        <div className='py-16 px-36'>
-            <div className='text-center'>
+        <div className='py-16 px-0 md:px-36'>
+            <div className='text-center hidden md:flex'>
                 <h3 className='text-4xl font-medium mb-6 tracking-tight'>Create Stunning Visuals and Professional Stories</h3>
                 <h1 className='text-7xl gap-2 mb-6 tracking-tight heading'>
                     <span>Without Ever </span>
@@ -31,13 +31,45 @@ export const LandingPage = () => {
                 <div className='flex flex-col items-center justify-center py-6'>
                     <div className='flex items-center gap-2'>
                         <Avater />
-                        <Avater />
                         ⭐⭐⭐⭐ 
                     </div>
                     <p className='text-lg font-medium tracking-tight pt-2'>Used by 150+ Professional Users</p>
                 </div>
             </div>
 
+
+            {/* mobile screen */}
+
+             <div className='text-center flex flex-col md:hidden'>
+                <h3 className='text-2xl font-medium mb-6 tracking-tight'>Create Stunning Visuals and <br /> Professional Stories</h3>
+                <h1 className='text-6xl gap-2 mb-6 tracking-tight heading max-w-xl m-auto'>
+                    <span>Without Ever </span>
+                    <span className='text-black '>
+                        Needing an Artist License
+                        <Image src={Vector11} alt="" className='w-60 m-auto' />
+                    </span>
+                </h1>
+                <p className='text-lg font-medium tracking-tight text-center max-w-[500px] mx-auto pt-4 pb-8'>
+                    Create stunning illustrations and storyboards within minutes without drawing. Quickly iterate on ideas and produce professional results without breaking your bank.
+                </p>
+                <div className='flex justify-center flex-col items-center'>
+                    <button className=' bg-linear-65 from-[#F8EB78] to-[#C0FEBE] text-black px-6 font-bold py-2 rounded-[15px] cursor-pointer flex items-center gap-2 border border-black border-b-[4px] active:border-b active:translate-y-[2px] transition-all duration-75'>
+                        <span className='text-3xl'>🎨</span>
+                        Create Your Free Story
+                    </button>
+
+                    <p className='heading text-lg'>No Credit Card Required</p>
+                </div>
+                <div className='flex flex-col items-center justify-center py-6'>
+                    <div className='flex items-center gap-2 flex-col'>
+                        <Avater />
+                        <div>
+                            ⭐⭐⭐⭐ 
+                        </div>
+                    </div>
+                    <p className='text-md font-medium tracking-tight pt-2'>Used by 150+ Professional Users</p>
+                </div>
+            </div>
         </div>
     )
 }
