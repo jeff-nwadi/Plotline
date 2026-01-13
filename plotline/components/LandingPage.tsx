@@ -15,7 +15,8 @@ export const LandingPage = () => {
     const container = useRef(null)
 
     useGSAP(() => {
-        const tl = gsap.timeline({ defaults: { ease: 'power3.out' } })
+        // Delay start to match preloader exit (approx 2.5s)
+        const tl = gsap.timeline({ defaults: { ease: 'power3.out' }, delay: 2.5 })
 
         tl.fromTo('.hero-sub', 
             { y: 20, opacity: 0 },

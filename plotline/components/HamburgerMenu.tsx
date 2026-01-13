@@ -6,9 +6,9 @@ import { useGSAP } from '@gsap/react'
 
 const menuLinks = [
     { title: "Home", href: "/" },
-    { title: "Features", href: "/features" },
-    { title: "Pricing", href: "/pricing" },
-    { title: "FAQs", href: "/faq" },
+    { title: "Features", href: "/" },
+    { title: "Pricing", href: "/" },
+    { title: "FAQs", href: "/" },
 ]
 
 export default function HamburgerMenu() {

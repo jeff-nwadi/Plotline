@@ -35,10 +35,14 @@ export default function Preloader() {
             duration: 0.8,
             ease: 'power3.in'
         })
+        .call(() => {
+            document.documentElement.setAttribute('data-preloader-done', 'true')
+            window.dispatchEvent(new Event('preloader-complete'))
+        })
         .to('.preloader-bg', {
-            y: '-100%',
-            duration: 1.2,
-            ease: 'power4.inOut'
+            y: '100%',
+            duration: 1.5,
+            ease: 'expo.inOut' // More dramatic ease
         }, '-=0.4')
 
     }, { scope: container })
