@@ -7,10 +7,9 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import { ArrowRight, ArrowUpRight } from 'lucide-react'
 
 // Import assets
-import Blog1 from './images/blog-1.png'
-import Blog2 from './images/blog-2.png'
-import Blog3 from './images/blog-3.png'
-import BlogBanner from './images/blog-banner.png'
+import Blog1 from './images/blog1.avif'
+import Blog2 from './images/blog2.webp'
+import Blog3 from './images/blog3.avif'
 
 gsap.registerPlugin(ScrollTrigger)
 
@@ -92,7 +91,7 @@ export default function BlogSection() {
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-24">
                 {posts.map((post, index) => (
                     <div key={index} className="blog-card group cursor-pointer">
-                        <div className="overflow-hidden rounded-[24px] mb-6 border border-gray-100 shadow-sm relative aspect-[4/3]">
+                        <div className="overflow-hidden rounded-[24px] mb-6 border border-gray-100 shadow-sm relative aspect-4/3">
                             <Image 
                                 src={post.image} 
                                 alt={post.title} 
@@ -133,9 +132,9 @@ export default function BlogSection() {
                          </button>
                      </div>
                  </div>
-                 <div className="flex-1 w-full flex justify-end relative h-full min-h-[300px] md:min-h-[auto]">
+                 {/* <div className="flex-1 w-full flex justify-end relative h-full min-h-[300px] md:min-h-[auto]">
                      <Image src={BlogBanner} alt="Community" className="object-contain w-full max-w-[400px]" />
-                 </div>
+                 </div> */}
             </div>
 
         </div>
