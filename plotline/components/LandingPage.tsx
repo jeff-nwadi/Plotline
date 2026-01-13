@@ -63,7 +63,7 @@ export const LandingPage = () => {
     }, { scope: container })
 
     return (
-        <div ref={container} className='py-16 px-0 md:px-36 overflow-hidden'>
+        <div ref={container} className='py-18 px-0 md:px-36 overflow-hidden'>
             <div className='text-center hidden lg:flex lg:flex-col items-center'>
                 <h3 className='hero-sub opacity-0 text-4xl font-medium mb-6 tracking-tight'>You Don’t Need to be A Pro Artist</h3>
                 <h1 className='hero-title text-7xl gap-2 mb-6 tracking-tight heading flex flex-col items-center'>

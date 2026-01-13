@@ -86,6 +86,7 @@ export const metadata: Metadata = {
 };
 
 import SmoothScroll from "@/components/SmoothScroll";
+import Preloader from "@/components/Preloader";
 
 export default function RootLayout({
   children,
@@ -97,6 +98,7 @@ export default function RootLayout({
       <body
         className={`${Gambetta.variable} ${satoshi.variable} antialiased`}
       >
+        <Preloader />
         <SmoothScroll>
           {children}
         </SmoothScroll>
