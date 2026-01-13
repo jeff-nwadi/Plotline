@@ -1,5 +1,6 @@
 "use client"
-import { CircleUserRound, Hamburger, Menu } from 'lucide-react'
+import { CircleUserRound } from 'lucide-react'
+import HamburgerMenu from './HamburgerMenu'
 import React, { useState } from 'react'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
@@ -50,8 +51,8 @@ export const Navbar = () => {
     const pathname = usePathname();
 
     return (
-        <div className='py-5 px-1 md:px-36'>
-            <div className='md:flex justify-between items-center hidden '>
+        <div className='py-5 px-1 md:px-10 lg:px-36'>
+            <div className='lg:flex justify-between items-center hidden '>
                 <div>
                     <h1 className='heading text-2xl'>Plotline</h1>
                 </div>
@@ -62,13 +63,13 @@ export const Navbar = () => {
                     <NavLink href="/faq" isActive={pathname === "/faq"}>FQAs</NavLink>
                 </ul>
                 <div className='flex gap-5'>
-                    <motion.button 
-                    whileTap={{ scale: 0.9 }}
-                    whileHover={{ y: -2 }}
-                    transition={{ duration: 0.2 }}
-                    className='bg-white text-black px-6 font-bold py-2 rounded-[15px] cursor-pointer flex items-center gap-2 border border-black border-b-[3px] hover:border-b-4'>
+                    <motion.button
+                        whileTap={{ scale: 0.9 }}
+                        whileHover={{ y: -2 }}
+                        transition={{ duration: 0.2 }}
+                        className='bg-white text-black px-6 font-bold py-2 rounded-[15px] cursor-pointer flex items-center gap-2 border border-black border-b-[3px] hover:border-b-4'>
                         <CircleUserRound size={25} />
-                        Login/Sign Up 
+                        Login/Sign Up
                     </motion.button>
                 </div>
             </div>
@@ -79,17 +80,43 @@ export const Navbar = () => {
                     <h1 className='heading text-3xl'>Plotline</h1>
                 </div>
                 <div className='flex gap-1 items-center'>
-                    <motion.button 
-                    whileTap={{ scale: 0.9 }}
-                    whileHover={{ y: -2 }}
-                    transition={{ duration: 0.2 }}
-                    className='bg-white text-black px-6 font-bold py-2 rounded-[15px] cursor-pointer flex items-center gap-2 border border-black border-b-[3px] hover:border-b-4'>
+                    <motion.button
+                        whileTap={{ scale: 0.9 }}
+                        whileHover={{ y: -2 }}
+                        transition={{ duration: 0.2 }}
+                        className='bg-white text-black px-6 font-bold py-2 rounded-[15px] cursor-pointer flex items-center gap-2 border border-black border-b-[3px] hover:border-b-4'>
                         <CircleUserRound size={25} />
-                        Login/Sign Up 
+                        Login/Sign Up
                     </motion.button>
                     <div>
-                        <Menu size={25} />
+                        <HamburgerMenu />
                     </div>
+                </div>
+            </div>
+
+
+             {/* mobile screen */}
+            <div className='md:flex hidden lg:hidden justify-between items-center'>
+                <div>
+                    <h1 className='heading text-3xl'>Plotline</h1>
+                </div>
+
+                  <ul className='flex gap-8 items-center'>
+                    <NavLink href="/" isActive={pathname === "/"}>Home</NavLink>
+                    <NavLink href="/features" isActive={pathname === "/features"}>Features</NavLink>
+                    <NavLink href="/pricing" isActive={pathname === "/pricing"}>Pricing</NavLink>
+                    <NavLink href="/faq" isActive={pathname === "/faq"}>FQAs</NavLink>
+                </ul>
+
+                <div className='flex gap-1 items-center'>
+                    <motion.button
+                        whileTap={{ scale: 0.9 }}
+                        whileHover={{ y: -2 }}
+                        transition={{ duration: 0.2 }}
+                        className='bg-white text-black px-6 font-bold py-2 rounded-[15px] cursor-pointer flex items-center gap-2 border border-black border-b-[3px] hover:border-b-4'>
+                        <CircleUserRound size={25} />
+                        Login/Sign Up
+                    </motion.button>
                 </div>
             </div>
         </div>
