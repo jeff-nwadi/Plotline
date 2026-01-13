@@ -5,23 +5,30 @@ import { ContentPage } from "../components/ContentPage";
 import FeatureSection from "../components/FeatureSection";
 import WhyChooseUs from "../components/WhyChooseUs";
 import BlogSection from "../components/BlogSection";
+import Footer from "../components/Footer";
 
 export default function Home() {
   return (
     <div className="flex flex-col min-h-screen">
-      <div className="background h-[160vh] md:h-[130vh]">
-        <Navbar />
-        <LandingPage />
-        <div className="flex md:hidden">
+      {/* Main content wrapper with higher z-index to cover the sticky footer */}
+      <main className="relative z-10 bg-white">
+        <div className="background h-[160vh] md:h-[130vh]">
+          <Navbar />
+          <LandingPage />
+          <div className="flex md:hidden">
+            <ContentPage />
+          </div>
+        </div>
+        <div className="hidden md:flex">
           <ContentPage />
         </div>
-      </div>
-      <div className="hidden md:flex">
-        <ContentPage />
-      </div>
-      <FeatureSection />
-      <WhyChooseUs />
-      <BlogSection />
+        <FeatureSection />
+        <WhyChooseUs />
+        <BlogSection />
+      </main>
+
+      {/* Footer reveals from behind as the user scrolls to the bottom */}
+      <Footer />
     </div>
   );
 }
