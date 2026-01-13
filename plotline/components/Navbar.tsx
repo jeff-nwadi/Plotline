@@ -80,14 +80,14 @@ export const Navbar = () => {
                     <h1 className='heading text-3xl'>Plotline</h1>
                 </div>
                 <div className='flex gap-1 items-center'>
-                    <motion.button
+                    {/* <motion.button
                         whileTap={{ scale: 0.9 }}
                         whileHover={{ y: -2 }}
                         transition={{ duration: 0.2 }}
                         className='bg-white text-black px-6 font-bold py-2 rounded-[15px] cursor-pointer flex items-center gap-2 border border-black border-b-[3px] hover:border-b-4'>
                         <CircleUserRound size={25} />
                         Login/Sign Up
-                    </motion.button>
+                    </motion.button> */}
                     <div>
                         <HamburgerMenu />
                     </div>
@@ -95,7 +95,7 @@ export const Navbar = () => {
             </div>
 
 
-             {/* mobile screen */}
+             {/* tablet screen */}
             <div className='md:flex hidden lg:hidden justify-between items-center'>
                 <div>
                     <h1 className='heading text-3xl'>Plotline</h1>

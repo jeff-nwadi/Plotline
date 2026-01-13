@@ -43,20 +43,19 @@ export const LandingPage = () => {
             {/* mobile screen */}
 
             <div className='text-center flex flex-col md:hidden'>
-                <h3 className='text-2xl font-medium mb-6 tracking-tight'>Create Stunning Visuals and <br /> Professional Stories</h3>
-                <h1 className='text-6xl gap-2 mb-6 tracking-tight heading max-w-xl m-auto'>
-                    <span>Without Ever </span>
+                <h3 className='text-xl font-medium mb-6 tracking-tight'>You Don’t Need to be A Pro Artist <br /> Professional Stories</h3>
+                <h1 className='text-5xl gap-2 mb-6 tracking-tight heading max-w-xl m-auto'>
                     <span className='text-black '>
-                        Needing an Artist License
+                       to Create Stunning Visuals
                         <Image src={Vector11} alt="" className='w-60 m-auto' />
                     </span>
                 </h1>
-                <p className='text-lg font-medium tracking-tight text-center max-w-[500px] mx-auto pt-4 pb-8'>
+                <p className='text-md font-medium tracking-tight text-center max-w-[500px] mx-auto pt-4 pb-8'>
                     Create stunning illustrations and storyboards within minutes without drawing. Quickly iterate on ideas and produce professional results without breaking your bank.
                 </p>
                 <div className='flex justify-center flex-col items-center'>
                     <button className=' bg-linear-65 from-[#F8EB78] to-[#C0FEBE] text-black px-6 font-bold py-2 rounded-[15px] cursor-pointer flex items-center gap-2 border border-black border-b-[4px] active:border-b active:translate-y-[2px] transition-all duration-75'>
-                        <span className='text-3xl'>🎨</span>
+                        <span className='text-3xl'></span>
                         Create Your Free Story
                     </button>
 
