@@ -107,7 +107,7 @@ export const LandingPage = () => {
                         <Image src={Vector11} alt="" className='w-44 m-auto mt-1' />
                     </span>
                 </h1>
-                <p className='px-8 hero-desc text-base font-medium tracking-tight text-center max-w-[500px] mx-auto pt-4 pb-8'>
+                <p className='px-5 hero-desc text-sm font-medium tracking-tight text-center max-w-[500px] mx-auto pt-4 pb-8'>
                     Create stunning illustrations and storyboards within minutes without drawing. Quickly iterate on ideas and produce professional results without breaking your bank.
                 </p>
                 <div className='flex justify-center flex-col items-center'>
