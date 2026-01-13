@@ -1,3 +1,4 @@
+'use client'
 import Image from 'next/image'
 import Logos from '../images/Frame 124.svg'
 import TriangleUp from '../images/image 170.svg'
@@ -5,9 +6,10 @@ import TriangleDown from '../images/image 169.svg'
 import line1 from '../images/Frame 6.svg'
 import line2 from '../images/Frame 7.svg'
 
+
 export const ContentPage = () => {
-  return (
-    <div className='py-16 px-1 md:px-0 md:-mt-96 lg:px-36'>
+    return (
+    <div className='py-16 px-1 md:px-0 md:-mt-66 lg:px-36'>
       <div className='hidden lg:flex lg:flex-col lg:items-center'>
         <video src="/storytribe-demo.mp4" loop autoPlay muted className='w-full h-auto rounded-4xl' />
         <Image src={Logos} alt="" className='py-10' />

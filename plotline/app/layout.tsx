@@ -60,11 +60,23 @@ const satoshi = localFont({
   variable: "--font-satoshi",
 });
 
-const caveatBrush = Caveat_Brush({
-  variable: "--font-caveat-brush",
-  weight: ["400"],
-  subsets: ["latin"],
+
+const Gambetta = localFont({
+  src: [
+    {
+      path: "../public/fonts/Gambetta-Bold.otf",
+      weight: "700",
+      style: "normal",
+    },
+  ],
+  variable: "--font-gambetta",
 });
+
+// const caveatBrush = Caveat_Brush({
+//   variable: "--font-caveat-brush",
+//   weight: ["400"],
+//   subsets: ["latin"],
+// });
 
 
 
@@ -83,7 +95,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${caveatBrush.variable} ${satoshi.variable} antialiased`}
+        className={`${Gambetta.variable} ${satoshi.variable} antialiased`}
       >
         <SmoothScroll>
           {children}

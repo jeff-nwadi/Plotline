@@ -51,10 +51,10 @@ export const Navbar = () => {
     const pathname = usePathname();
 
     return (
-        <div className='py-5 px-1 md:px-10 lg:px-36'>
+        <div className='py-5 px-6 md:px-10 lg:px-36'>
             <div className='lg:flex justify-between items-center hidden '>
                 <div>
-                    <h1 className='heading text-2xl'>Plotline</h1>
+                    <h1 className='text-3xl font-bold'>Plotline</h1>
                 </div>
                 <ul className='flex gap-8 items-center'>
                     <NavLink href="/" isActive={pathname === "/"}>Home</NavLink>
@@ -77,7 +77,7 @@ export const Navbar = () => {
             {/* mobile screen */}
             <div className='md:hidden flex justify-between items-center'>
                 <div>
-                    <h1 className='heading text-3xl'>Plotline</h1>
+                    <h1 className='text-3xl font-bold'>Plotline.</h1>
                 </div>
                 <div className='flex gap-1 items-center'>
                     {/* <motion.button
@@ -98,7 +98,7 @@ export const Navbar = () => {
              {/* tablet screen */}
             <div className='md:flex hidden lg:hidden justify-between items-center'>
                 <div>
-                    <h1 className='heading text-3xl'>Plotline</h1>
+                    <h1 className='text-3xl font-bold'>Plotline</h1>
                 </div>
 
                   <ul className='flex gap-8 items-center'>

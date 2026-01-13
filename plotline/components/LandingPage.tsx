@@ -1,36 +1,92 @@
-import React from 'react'
+'use client'
+import React, { useRef } from 'react'
 import Image from 'next/image'
 import Vector11 from '../images/Vector 11.svg'
 import Arrow from '../images/arrow.svg'
 import NoCreditCard from '../images/No Credit.svg'
 import Avater from './Avater'
+import { ArrowRight } from 'lucide-react'
+import gsap from 'gsap'
+import { useGSAP } from '@gsap/react'
+
+gsap.registerPlugin(useGSAP)
 
 export const LandingPage = () => {
+    const container = useRef(null)
+
+    useGSAP(() => {
+        const tl = gsap.timeline({ defaults: { ease: 'power3.out' } })
+
+        tl.fromTo('.hero-sub', 
+            { y: 20, opacity: 0 },
+            { y: 0, opacity: 1, duration: 0.8, stagger: 0.1 }
+        )
+        .fromTo('.hero-title span', 
+            { y: 50, opacity: 0, skewY: 7 },
+            { y: 0, opacity: 1, skewY: 0, duration: 1, stagger: 0.15 },
+            '-=0.6'
+        )
+        .fromTo('.hero-desc', 
+            { y: 20, opacity: 0 },
+            { y: 0, opacity: 1, duration: 0.8 }, 
+            '-=0.6'
+        )
+        .fromTo('.hero-btn', 
+            { scale: 0.8, opacity: 0 },
+            { scale: 1, opacity: 1, duration: 0.8, ease: 'elastic.out(1, 0.5)' },
+            '-=0.4'
+        )
+        .fromTo('.hero-stats', 
+            { opacity: 0, y: 20 },
+            { opacity: 1, y: 0, duration: 0.8 },
+            '-=0.6'
+        )
+        .fromTo('.floating-decor', 
+            { opacity: 0, scale: 0 },
+            { opacity: 1, scale: 1, duration: 0.6, stagger: 0.1, ease: 'back.out(1.7)' },
+            '-=0.4'
+        )
+
+        // Continuous floating animation
+        gsap.to('.floating-decor', {
+            y: -10,
+            duration: 2,
+            repeat: -1,
+            yoyo: true,
+            ease: 'sine.inOut',
+            stagger: {
+                each: 0.5,
+                from: 'random'
+            }
+        })
+
+    }, { scope: container })
+
     return (
-        <div className='py-16 px-0 md:px-36'>
-            <div className='text-center hidden lg:flex lg:flex-col'>
-                <h3 className='text-4xl font-medium mb-6 tracking-tight'>Create Stunning Visuals and Professional Stories</h3>
-                <h1 className='text-7xl gap-2 mb-6 tracking-tight heading'>
-                    <span>Without Ever </span>
-                    <span className='text-black relative'>
-                        Needing an Artist License
-                        <Image src={Vector11} alt="" className='absolute bottom-[-10px] right-0' />
+        <div ref={container} className='py-16 px-0 md:px-36 overflow-hidden'>
+            <div className='text-center hidden lg:flex lg:flex-col items-center'>
+                <h3 className='hero-sub text-4xl font-medium mb-6 tracking-tight'>You Don’t Need to be A Pro Artist</h3>
+                <h1 className='hero-title text-7xl gap-2 mb-6 tracking-tight heading flex flex-col items-center'>
+                    <span className='inline-block'>Without Ever</span>
+                    <span className='text-black relative w-fit inline-block'>
+                         to Create Stunning Visuals
+                        <Image src={Vector11} alt="" className='absolute bottom-[-10px] right-0 w-72 whitespace-nowrap mt-2' />
                     </span>
                 </h1>
-                <p className='text-xl font-medium tracking-tight text-center max-w-[750px] mx-auto pt-4 pb-8'>
+                <p className='hero-desc text-xl font-medium tracking-tight text-center max-w-[750px] mx-auto pt-4 pb-8'>
                     Create stunning illustrations and storyboards within minutes without drawing. Quickly iterate on ideas and produce professional results without breaking your bank.
                 </p>
                 <div className='flex justify-center'>
                     <div className='relative w-fit'>
-                        <button className=' bg-linear-65 from-[#F8EB78] to-[#C0FEBE] text-black px-6 font-bold py-2 rounded-[15px] cursor-pointer flex items-center gap-2 border border-black border-b-[4px] active:border-b active:translate-y-[2px] transition-all duration-75'>
-                            <span className='text-3xl'>🎨</span>
+                        <button className='hero-btn bg-linear-65 from-[#F8EB78] to-[#C0FEBE] text-black px-6 font-bold py-2 rounded-[15px] cursor-pointer flex items-center gap-2 border border-black border-b-[4px] active:border-b active:translate-y-[2px] transition-all duration-75'>
                             Create Your Free Story
+                             <ArrowRight />
                         </button>
-                        <Image src={Arrow} alt="" className='absolute top-3 left-[105%] w-20' />
-                        <Image src={NoCreditCard} alt="" className='absolute top-16 left-[110%] w-32 whitespace-nowrap' />
+                        <Image src={Arrow} alt="" className='floating-decor absolute top-0 left-[105%] w-20' />
+                        <Image src={NoCreditCard} alt="" className='floating-decor absolute top-16 left-[110%] w-32 whitespace-nowrap' />
                     </div>
                 </div>
-                <div className='flex flex-col items-center justify-center py-6'>
+                <div className='hero-stats flex flex-col items-center justify-center py-6'>
                     <div className='flex items-center gap-2'>
                         <Avater />
                         ⭐⭐⭐⭐
@@ -42,26 +98,27 @@ export const LandingPage = () => {
 
             {/* mobile screen */}
 
-            <div className='text-center flex flex-col md:hidden'>
-                <h3 className='text-xl font-medium mb-6 tracking-tight'>You Don’t Need to be A Pro Artist <br /> Professional Stories</h3>
-                <h1 className='text-5xl gap-2 mb-6 tracking-tight heading max-w-xl m-auto'>
-                    <span className='text-black '>
+            <div className='text-center flex flex-col md:hidden items-center'>
+                <h3 className='hero-sub text-xl font-medium mb-2 tracking-tight'>You Don’t Need to be A Pro Artist</h3>
+                <h1 className='hero-title text-4xl gap-2 mb-6 tracking-tight font-bold max-w-xl m-auto flex flex-col'>
+                    <span className='inline-block'>Without Ever</span>
+                    <span className='text-black inline-block relative'>
                        to Create Stunning Visuals
-                        <Image src={Vector11} alt="" className='w-60 m-auto' />
+                        <Image src={Vector11} alt="" className='w-44 m-auto mt-1' />
                     </span>
                 </h1>
-                <p className='text-md font-medium tracking-tight text-center max-w-[500px] mx-auto pt-4 pb-8'>
+                <p className='px-8 hero-desc text-base font-medium tracking-tight text-center max-w-[500px] mx-auto pt-4 pb-8'>
                     Create stunning illustrations and storyboards within minutes without drawing. Quickly iterate on ideas and produce professional results without breaking your bank.
                 </p>
                 <div className='flex justify-center flex-col items-center'>
-                    <button className=' bg-linear-65 from-[#F8EB78] to-[#C0FEBE] text-black px-6 font-bold py-2 rounded-[15px] cursor-pointer flex items-center gap-2 border border-black border-b-[4px] active:border-b active:translate-y-[2px] transition-all duration-75'>
-                        <span className='text-3xl'></span>
+                    <button className='hero-btn bg-linear-65 from-[#F8EB78] to-[#C0FEBE] text-black px-6 font-bold py-2 rounded-[15px] cursor-pointer flex items-center gap-2 border border-black border-b-[4px] active:border-b active:translate-y-[2px] transition-all duration-75'>
                         Create Your Free Story
+                         <ArrowRight />
                     </button>
 
-                    <p className='heading text-lg'>No Credit Card Required</p>
+                    <p className='hero-btn text-sm mt-4'>No Credit Card Required</p>
                 </div>
-                <div className='flex flex-col items-center justify-center py-6'>
+                <div className='hero-stats flex flex-col items-center justify-center py-6'>
                     <div className='flex items-center gap-2 flex-col'>
                         <Avater />
                         <div>
@@ -73,28 +130,30 @@ export const LandingPage = () => {
             </div>
 
             {/* tablet screen */}
-            <div className='hidden md:flex lg:hidden'>
-                <div className='text-center'>
-                    <h3 className='text-2xl font-medium mb-6 tracking-tight'>Create Stunning Visuals and Professional Stories</h3>
-                    <h1 className='text-7xl gap-2 mb-6 tracking-tight heading'>
-                        <span>Without Ever </span>
-                        <span className='text-black relative'>
-                            Needing an Artist License
-                            <Image src={Vector11} alt="" className='absolute bottom-[-10px] right-0' />
+            <div className='hidden md:flex lg:hidden justify-center'>
+                <div className='text-center flex flex-col items-center'>
+                    <h3 className='hero-sub text-2xl font-medium mb-6 tracking-tight'>You Don’t Need to be A Pro Artist</h3>
+                    <h1 className='hero-title text-5xl gap-2 mb-6 tracking-tight heading flex flex-col'>
+                        <span className='inline-block'>Without Ever </span>
+                        <span className='text-black relative w-fit inline-block'>
+                             to Create Stunning Visuals
+                            <Image src={Vector11} alt="" className='absolute bottom-[-10px] right-30 w-60 whitespace-nowrap' />
                         </span>
                     </h1>
-                    <p className='text-xl font-medium tracking-tight text-center max-w-[750px] mx-auto pt-4 pb-8'>
+                    <p className='hero-desc text-xl font-medium tracking-tight text-center max-w-[750px] mx-auto pt-4 pb-8'>
                         Create stunning illustrations and storyboards within minutes without drawing. Quickly iterate on ideas and produce professional results without breaking your bank.
                     </p>
-                    <div className='flex justify-center flex-col items-center'>
-                        <button className=' bg-linear-65 from-[#F8EB78] to-[#C0FEBE] text-black px-6 font-bold py-2 rounded-[15px] cursor-pointer flex items-center gap-2 border border-black border-b-[4px] active:border-b active:translate-y-[2px] transition-all duration-75'>
-                            <span className='text-3xl'>🎨</span>
-                            Create Your Free Story
-                        </button>
-
-                        <p className='heading text-lg'>No Credit Card Required</p>
+                    <div className='flex justify-center flex-col items-center relative'>
+                        <div className='relative'>
+                            <button className='hero-btn bg-linear-65 from-[#F8EB78] to-[#C0FEBE] text-black px-6 font-bold py-2 rounded-[15px] cursor-pointer flex items-center gap-2 border border-black border-b-[4px] active:border-b active:translate-y-[2px] transition-all duration-75'>
+                                Create Your Free Story
+                                <ArrowRight />
+                            </button>
+                             <Image src={Arrow} alt="" className='floating-decor absolute top-0 left-[110%] w-16' />
+                        </div>
+                        <p className='hero-btn heading text-lg mt-4'>No Credit Card Required</p>
                     </div>
-                    <div className='flex flex-col items-center justify-center py-6'>
+                    <div className='hero-stats flex flex-col items-center justify-center py-6'>
                         <div className='flex items-center gap-2'>
                             <Avater />
                             ⭐⭐⭐⭐
