@@ -4,6 +4,7 @@ import { Navbar } from "../components/Navbar";
 import { ContentPage } from "../components/ContentPage";
 import FeatureSection from "../components/FeatureSection";
 import WhyChooseUs from "../components/WhyChooseUs";
+import BlogSection from "../components/BlogSection";
 
 export default function Home() {
   return (
@@ -20,6 +21,7 @@ export default function Home() {
       </div>
       <FeatureSection />
       <WhyChooseUs />
+      <BlogSection />
     </div>
   );
 }
