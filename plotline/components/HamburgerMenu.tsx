@@ -76,15 +76,17 @@ export default function HamburgerMenu() {
                     </div>
 
                     <div className="flex justify-between items-end border-t border-gray-800 pt-8">
-                        <div className='flex flex-col gap-2'>
-                            <p className='text-gray-400 text-sm uppercase tracking-widest'>Get in touch</p>
-                            <a href="mailto:hello@plotline.co" className='text-white text-lg font-medium'>hello@plotline.co</a>
-                        </div>
-                        <div className='flex gap-4'>
-                            <a href="#" className='text-white hover:text-gray-300 transition-colors'>Twitter</a>
-                            <a href="#" className='text-white hover:text-gray-300 transition-colors'>Instagram</a>
-                            <a href="#" className='text-white hover:text-gray-300 transition-colors'>LinkedIn</a>
-                        </div>
+                        <div className='flex flex-col gap-4'>
+                            <div>
+                                <p className='text-gray-400 text-sm uppercase tracking-widest'>Get in touch</p>
+                                <a href="mailto:hello@plotline.co" className='text-white text-lg font-medium'>hello@plotline.co</a>
+                            </div>
+                            <div className='flex gap-4'>
+                                <a href="#" className='text-white hover:text-gray-300 transition-colors'>Twitter</a>
+                                <a href="#" className='text-white hover:text-gray-300 transition-colors'>Instagram</a>
+                                <a href="#" className='text-white hover:text-gray-300 transition-colors'>LinkedIn</a>
+                            </div> 
+                        </div> 
                     </div>
                 </div>
             </div>
