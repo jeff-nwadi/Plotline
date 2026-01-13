@@ -6,6 +6,7 @@ import FeatureSection from "../components/FeatureSection";
 import WhyChooseUs from "../components/WhyChooseUs";
 import BlogSection from "../components/BlogSection";
 import Footer from "../components/Footer";
+import FAQSection from "../components/FAQSection";
 
 export default function Home() {
   return (
@@ -24,6 +25,7 @@ export default function Home() {
         </div>
         <FeatureSection />
         <WhyChooseUs />
+        <FAQSection />
         <BlogSection />
       </main>
 
