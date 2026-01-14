@@ -9,7 +9,7 @@ import line2 from '../images/Frame 7.svg'
 
 export const ContentPage = () => {
     return (
-    <div className='py-16 px-1 md:px-0 md:-mt-66 mt-20 lg:px-36'>
+    <div className='pb-28 px-1 md:px-0 md:-mt-66 mt-20 lg:px-36'>
       <div className='hidden lg:flex lg:flex-col lg:items-center'>
         <video src="/storytribe-demo.mp4" loop autoPlay muted className='w-full h-auto rounded-4xl' />
         <Image src={Logos} alt="" className='py-10' />

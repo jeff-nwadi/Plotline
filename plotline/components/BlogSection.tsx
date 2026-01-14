@@ -52,26 +52,26 @@ export default function BlogSection() {
     const posts = [
         {
             image: Blog1,
-            date: "Dec 26, 2025",
+            date: "Jan 6, 2026",
             tag: "Product Updates",
             title: "Updates to AI Credits on StoryTribe 🚀",
-            excerpt: "We're updating how AI credits work on StoryTribe. We've moved from daily limits to flexible monthly credits.",
+            excerpt: "We're updating how AI credits work on Plotline. We've moved from daily limits to flexible monthly credits.",
             color: "bg-orange-100 text-orange-700"
         },
         {
             image: Blog2,
-            date: "Dec 8, 2025",
+            date: "Jan 8, 2026",
             tag: "Product Updates",
             title: "Big year-end updates: AI image prompting and more",
-            excerpt: "We're wrapping the year with three new features...and one huge milestone: StoryTribe just crossed 400,000 users! 🎉",
+            excerpt: "We're wrapping the year with three new features...and one huge milestone: Plotline just crossed 400,000 users! 🎉",
             color: "bg-purple-100 text-purple-700"
         },
         {
             image: Blog3,
-            date: "Dec 5, 2025",
+            date: "Jan 13, 2026",
             tag: "Community",
             title: "StoryTribe Update: Oct 2025",
-            excerpt: "Discover StoryTribe's October 2025 update: alignment tools, movable annotations, 200+ templates, new poses.",
+            excerpt: "Discover Plotline's October 2026 update: alignment tools, movable annotations, 200+ templates, new poses.",
             color: "bg-blue-100 text-blue-700"
         }
     ]

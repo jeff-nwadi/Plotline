@@ -13,7 +13,7 @@ export default function Home() {
     <div className="flex flex-col min-h-screen">
       {/* Main content wrapper with higher z-index to cover the sticky footer */}
       <main className="relative z-10 bg-white">
-        <div className="background h-[160vh] md:h-[130vh]">
+        <div className="background h-[150vh] md:h-[120vh] lg:h-[140vh]">
           <Navbar />
           <LandingPage />
           <div className="flex md:hidden">

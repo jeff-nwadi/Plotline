@@ -87,7 +87,7 @@ export default function FeatureSection() {
     }, { scope: container })
 
     return (
-        <div ref={container} className="py-24 px-6 md:px-10 lg:px-36 bg-white overflow-hidden">
+        <div ref={container} className="pt-24 pb-20 px-6 md:px-10 lg:px-36 bg-white overflow-hidden">
             <div className="flex flex-col items-center mb-16 text-center">
                 <h2 className="heading text-5xl md:text-7xl font-bold tracking-tight text-black leading-[1.1]">
                     Your stories deserve<br />
@@ -99,13 +99,13 @@ export default function FeatureSection() {
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
                 {/* Visuals - Tilted Cards */}
                 <div className="relative h-[450px] w-full flex items-center justify-center">
-                    <div className="feature-card-1 absolute left-[5%] top-12 w-[200px] md:w-[260px] transform -rotate-12 z-10 drop-shadow-2xl">
+                    <div className="feature-card-1 absolute left-[5%] top-12 w-[200px] md:w-[260px] transform -rotate-12 z-10 drop-shadow-xl">
                         <Image src={Feature1} alt="Feature 1" className="rounded-2xl border-4 border-white" />
                     </div>
-                    <div className="feature-card-2 absolute left-[30%] md:left-[35%] top-2 w-[220px] md:w-[280px] transform rotate-6 z-20 drop-shadow-2xl">
+                    <div className="feature-card-2 absolute left-[30%] md:left-[35%] top-2 w-[220px] md:w-[280px] transform rotate-6 z-20 drop-shadow-xl">
                         <Image src={Feature2} alt="Feature 2" className="rounded-2xl border-4 border-white" />
                     </div>
-                    <div className="feature-card-3 absolute right-[5%] bottom-12 w-[200px] md:w-[260px] transform rotate-12 z-10 drop-shadow-2xl">
+                    <div className="feature-card-3 absolute right-[5%] bottom-12 w-[200px] md:w-[260px] transform rotate-12 z-10 drop-shadow-xl">
                         <Image src={Feature3} alt="Feature 3" className="rounded-2xl border-4 border-white" />
                     </div>
                 </div>
